@@ -60,37 +60,52 @@
     <div class="row my-5">
       <div class="col-12 col-xl-4 my-3 text-center">
         <a class="position-relative" href="">
-          <img class="banner" src="public/img/square1.jpg">
+          <img class="banner img-fluid" src="public/img/square1.jpg">
           <span class="position-absolute word">Vêtements</span>
         </a>
       </div>
       <div class="col-12 col-xl-4 my-3 text-center">
         <a class="position-relative" href="">
-          <img class="banner" src="public/img/square2.jpg">
+          <img class="banner img-fluid" src="public/img/square2.jpg">
           <span class="position-absolute word">Accessoires</span>
         </a>
       </div>
       <div class="col-12 col-xl-4 my-3 text-center">
         <a class="position-relative" href="">
-          <img class="banner" src="public/img/square3.jpg">
+          <img class="banner img-fluid" src="public/img/square3.jpg">
           <span class="position-absolute word word2">NOUVELLE COLLECTION</span>
         </a>
       </div>
     </div>
     <div class="row d-flex justify-content-between">
-      <div class="col-5 street-bg">
-        <div class="border">
-          <h2 class="text-center">historique des collections</h2>
+      <div class="col-12 col-xl-5 street-bg position-relative">
+        <div class="text-center content bg-gradient">
+          <h2 class="display-6 mt-3"><strong>Historique des collections</strong></h2>
+          <div class="yellow h5 mt-3">
+            <p>Collection Hiver</p>
+            <p>Collection Printemps</p>
+            <p>Collection Été</p>
+            <p>Collection Automne</p>
+          </div>
         </div>
       </div>
-      <div class="col-5 bg-secondary bg-gradient">
-        <h2 class="text-center">contacter le SAV</h2>
+      <div class="col-12 col-xl-5 mt-5 street-bg position-relative">
+        <div class="text-center content bg-gradient">
+          <h2 class="display-6 my-5"><strong>Un probléme avec ta commande ?</strong></h2>
+          <a class="contact h3" href="">N'hésite pas nous contacter</a>
+        </div>
       </div>
     </div>
   </div>
 
-    <footer>
-      
+    <footer class="bg-gray">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            
+          </div>
+        </div>
+      </div>
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
