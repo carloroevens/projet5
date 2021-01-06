@@ -8,7 +8,7 @@ if (isset($_GET['p'])) {
 
 try{
 	if ($p === 'home') {
-		require 'view/home.php';
+		require 'view/home2.php';
 	}
 }
 

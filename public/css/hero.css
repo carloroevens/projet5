@@ -1,0 +1,61 @@
+.nav-link
+{
+	padding-bottom: 0px;
+}
+
+.nav-link:hover
+{
+	border-bottom: solid #E3C220 2px;
+}
+
+.banner
+{
+	width: 360px;
+    height: 250px;
+    transform: scale(1);
+    transition: .4s ease-in-out;
+}
+
+.banner:hover
+{
+	transform: scale(1.05);
+}
+
+.word
+{
+	text-decoration: none;
+	color: black;
+    font-weight: bold;
+    font-size: larger;
+    background-color: white;
+    padding: 10px;
+    top: 30%;
+    left: 33%;
+    text-transform: uppercase;
+}
+
+.word2
+{
+    left: 17%;
+}
+
+.banner:hover + .word
+{
+	background-color: #E3C220;
+}
+
+.word:hover
+{
+	background-color: #E3C220;
+}
+
+.street-bg
+{
+	background-image: url(../img/street.jpg);
+	height: 350px;
+}
+
+.border
+{
+	background-color: white;
+}
