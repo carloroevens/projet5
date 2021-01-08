@@ -1,14 +1,24 @@
 <?php
 
+require('controller/Autoloader.php');
+Autoloader::register();
+
 if (isset($_GET['p'])) {
 	$p = $_GET['p'];
 } else {
 	$p = 'home';
 }
 
+//initialization of objects
+$appController = new AppController;
+$itemController = new ItemsController;
+
 try{
 	if ($p === 'home') {
-		require 'view/home2.php';
+		$appController->getHomePage();
+	}
+	elseif ($p === 'shop') {
+		$appController->getShopPage();
 	}
 }
 

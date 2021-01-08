@@ -4,7 +4,7 @@
 */
 class ItemManager extends Manager
 {
-	public function addItem($item_name, $item_price, $item_description, $item_img, $item_category, $item_date)
+	public function addItem($item_name, $item_price, $item_description, $item_img, $item_category)
 	{
 		$db = $this->dbConnect();
 
@@ -28,7 +28,7 @@ class ItemManager extends Manager
 		$req->execute(array($item_id));
 	}
 
-	public function getPosts($class)
+	public function getItems($class)
 	{
 		$db = $this->dbConnect();
 
