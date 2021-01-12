@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="public/css/hero.css">
+    <link rel="stylesheet" type="text/css" href="public/css/shop.css">
 
     <title>Hello, world!</title>
   </head>
@@ -19,16 +20,39 @@
 
   <div class="container">
     <div class="row">
-      <div class="col">
+      <div class="col text-center">
         <h1>VÊTEMENTS</h1>
-        <?php
-          foreach ($itemManager->getItems('ItemsController') as $items): ?>
-            
-            <p><?= $items->item_name; ?></p>
-            <p><?= $items->item_price; ?></p>
-            <p><img src = "data:image/png;base64,<?= base64_encode($items->item_img) ?>"/></p>
-          <?php endforeach; ?>
+        <ul class="list-inline category pt-4">
+          <li class="list-inline-item"><a class="text-decoration-none text-secondary mx-5" href="">TOUT</a></li>
+          <li class="list-inline-item"><a class="text-decoration-none text-secondary mx-5" href="">T-SHIRTS</a></li>
+          <li class="list-inline-item"><a class="text-decoration-none text-secondary mx-5" href="">SWEATS</a></li>
+          <li class="list-inline-item"><a class="text-decoration-none text-secondary mx-5" href="">JEANS</a></li>
+          <li class="list-inline-item"><a class="text-decoration-none text-secondary mx-5" href="">VESTES</a></li>
+          <li class="list-inline-item"><a class="text-decoration-none text-secondary mx-5" href="">ACCESSOIRES</a></li>
+        </ul>
       </div>
+    </div>
+  
+    <div class="row">
+      
+        <?php
+                foreach ($itemManager->getItems('ItemsController') as $items): ?>
+
+      <div class="col-3 my-4">
+        <div class="card bg-product" style="width: 18rem;">
+          <img src="data:image/png;base64,<?= base64_encode($items->item_img) ?>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <a class="stretched-link text-decoration-none" href="">
+              <ul class="list-inline d-flex justify-content-between">
+                <li class="card-title list-inline-item text-dark fs-3"><?= $items->item_name; ?></li>
+                <li class="card-text list-inline-item text-muted mt-2 fs-5"><?= $items->item_price; ?> €</li>
+              </ul>
+            </a>
+          </div>
+        </div>
+      </div>
+        <?php endforeach; ?>
+
     </div>
   </div>
 

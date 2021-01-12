@@ -18,7 +18,7 @@
   ?>
 
   <div class="hero">
-    <img src="public/img/hero.jpg" class="img-fluid" alt="...">
+    <img src="public/img/hero-t2.jpg" class="img-fluid" alt="...">
   </div>
 
   <section class="bg-dark">

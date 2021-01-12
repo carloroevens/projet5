@@ -1,0 +1,27 @@
+.category li::after
+{
+	content: "~";
+	color: gray;
+}
+
+.category li:last-child::after
+{
+	content: " ";
+	color: gray;
+}
+
+ul li a:hover
+{
+	border-bottom: #E3C220 solid 2px;
+}
+
+.bg-product
+{
+	background-color: #EFEFEF;
+	border: none;
+}
+
+.card-body a ul
+{
+	margin-bottom: 0px;
+}

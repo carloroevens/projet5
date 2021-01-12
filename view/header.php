@@ -7,18 +7,18 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav mx-lg-5">
           <li class="nav-item ms-lg-4">
-            <a class="nav-link underline" href="index.php?p=shop">VÊTEMENTS</a>
+            <a class="nav-link" href="index.php?p=shop">VÊTEMENTS</a>
           </li>
           <li class="nav-item ms-lg-5">
-            <a class="nav-link underline" href="#">COLLECTIONS</a>
+            <a class="nav-link" href="#">COLLECTIONS</a>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link underline" href="#">Panier</a>
+            <a class="nav-link" href="#">Panier</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link underline" href="#">Connexion</a>
+            <a class="nav-link" href="#">Connexion</a>
           </li>
         </ul>
       </div>
