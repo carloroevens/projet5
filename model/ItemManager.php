@@ -51,6 +51,18 @@ class ItemManager extends Manager
 		return $datas;
 	}
 
+	public function getRecommendationItem($item_category, $class)
+	{
+		$db = $this->dbConnect();
+
+		$req = $db->prepare('SELECT id, item_name, item_price, item_img FROM items_description WHERE item_category = ? LIMIT 0, 4');
+		$req->execute(array($item_category));
+		$req->setFetchMode(PDO::FETCH_CLASS, $class);
+		$datas = $req->fetchAll();
+
+		return $datas;
+	}
+
 	//On passe a la table items_size
 
 	public function addSize($item_id, $item_numberofs, $item_numberofm, $item_numberofl, $item_numberofxl, $item_numberofxxl)

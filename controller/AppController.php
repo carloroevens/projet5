@@ -15,4 +15,18 @@ class AppController
 		
 		require 'view/shop.php';
 	}
+
+	public function getSinglePage($idProduct)
+	{
+		if (isset($idProduct) && $idProduct > 0) {
+			$itemManager = new ItemManager;
+			$item = $itemManager->getSingleItem($idProduct, 'ItemsController');
+
+			require 'view/single.php';
+		}
+		else
+		{
+			throw new Exception("L'identifiant du produit n'est pas le bon");
+		}
+	}
 }

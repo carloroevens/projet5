@@ -4,5 +4,8 @@
 */
 class ItemsController
 {
-	
+	public function getUrl()
+	{
+		return 'index.php?p=single&idProduct=' . $this->id;
+	}
 }

@@ -1,0 +1,60 @@
+label
+{
+	position: relative;
+}
+
+label input
+{
+	width: 50px;
+	height: 50px;
+	-webkit-appearance: none;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0;
+    outline: none;
+    border: black solid 1px;
+    cursor: pointer;
+}
+
+span
+{
+	position: absolute;
+    top: 21%;
+    color: black;
+    cursor: pointer;
+}
+
+ul li:nth-child(1) span
+{
+	left: 20px;
+}
+
+ul li:nth-child(2) span
+{
+	left: 17px;
+}
+
+ul li:nth-child(3) span
+{
+	left: 21px;
+}
+
+ul li:nth-child(4) span
+{
+	left: 17px;
+}
+
+ul li:nth-child(5) span
+{
+	left: 13px;
+}
+
+input:checked
+{
+	background-color: black;
+}
+
+input:checked+span
+{
+	color: white;
+}

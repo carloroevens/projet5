@@ -13,12 +13,16 @@ if (isset($_GET['p'])) {
 $appController = new AppController;
 $itemController = new ItemsController;
 
+
 try{
 	if ($p === 'home') {
 		$appController->getHomePage();
 	}
 	elseif ($p === 'shop') {
 		$appController->getShopPage();
+	}
+	elseif ($p === 'single') {
+		$appController->getSinglePage($_GET['idProduct']);
 	}
 }
 
