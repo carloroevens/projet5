@@ -24,6 +24,12 @@ try{
 	elseif ($p === 'single') {
 		$appController->getSinglePage($_GET['idProduct']);
 	}
+	elseif ($p === 'connexion') {
+		$appController->getConnexionPage();
+	}
+	elseif ($p === 'registration') {
+		# code...
+	}
 }
 
 catch(Exception $e)

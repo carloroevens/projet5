@@ -29,4 +29,14 @@ class AppController
 			throw new Exception("L'identifiant du produit n'est pas le bon");
 		}
 	}
+
+	public function getConnexionPage()
+	{
+		require 'view/connexion.php';
+	}
+
+	public function getRegistrationPage()
+	{
+		require 'view/registration.php';
+	}
 }

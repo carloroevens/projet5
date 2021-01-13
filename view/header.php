@@ -13,12 +13,12 @@
             <a class="nav-link link" href="#">COLLECTIONS</a>
           </li>
         </ul>
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
+        <ul class="navbar-nav ms-auto me-5">
+          <li class="nav-item me-3">
             <a class="nav-link link" href="#">Panier</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link" href="#">Connexion</a>
+            <a class="nav-link link" href="index.php?p=connexion">Connexion</a>
           </li>
         </ul>
       </div>
