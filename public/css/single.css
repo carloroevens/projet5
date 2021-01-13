@@ -3,7 +3,7 @@ label
 	position: relative;
 }
 
-label input
+.sizes
 {
 	width: 50px;
 	height: 50px;
@@ -16,7 +16,7 @@ label input
     cursor: pointer;
 }
 
-span
+label span
 {
 	position: absolute;
     top: 21%;
@@ -49,12 +49,12 @@ ul li:nth-child(5) span
 	left: 13px;
 }
 
-input:checked
+.sizes:checked
 {
 	background-color: black;
 }
 
-input:checked+span
+.sizes:checked+span
 {
 	color: white;
 }

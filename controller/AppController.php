@@ -39,4 +39,15 @@ class AppController
 	{
 		require 'view/registration.php';
 	}
+
+	public function getProfilePage()
+	{
+		if ($_SESSION['loger'] === 'yes') {
+			require 'view/profile.php';
+		}
+		else
+		{
+			throw new Exception("Vous n'étes pas connecter");
+		}
+	}
 }

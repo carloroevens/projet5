@@ -12,7 +12,7 @@ if (isset($_GET['p'])) {
 //initialization of objects
 $appController = new AppController;
 $itemController = new ItemsController;
-
+$userController = new UsersController;
 
 try{
 	if ($p === 'home') {
@@ -24,11 +24,23 @@ try{
 	elseif ($p === 'single') {
 		$appController->getSinglePage($_GET['idProduct']);
 	}
-	elseif ($p === 'connexion') {
+	elseif ($p === 'connexionpage') {
 		$appController->getConnexionPage();
 	}
 	elseif ($p === 'registration') {
-		# code...
+		$appController->getRegistrationPage();
+	}
+	elseif ($p === 'insert-user') {
+		$userController->addUser();
+	}
+	elseif ($p === 'connexion') {
+		$userController->connexion();
+	}
+	elseif ($p === 'disconnection') {
+		$userController->disconnection();
+	}
+	elseif ($p === 'profile') {
+		$appController->getProfilePage();
 	}
 }
 

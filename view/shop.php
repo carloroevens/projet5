@@ -23,12 +23,12 @@
       <div class="col text-center">
         <h1>VÊTEMENTS</h1>
         <ul class="list-inline category pt-4">
-          <li class="list-inline-item"><a class="text-decoration-none text-secondary mx-5" href="">TOUT</a></li>
-          <li class="list-inline-item"><a class="text-decoration-none text-secondary mx-5" href="">T-SHIRTS</a></li>
-          <li class="list-inline-item"><a class="text-decoration-none text-secondary mx-5" href="">SWEATS</a></li>
-          <li class="list-inline-item"><a class="text-decoration-none text-secondary mx-5" href="">JEANS</a></li>
-          <li class="list-inline-item"><a class="text-decoration-none text-secondary mx-5" href="">VESTES</a></li>
-          <li class="list-inline-item"><a class="text-decoration-none text-secondary mx-5" href="">ACCESSOIRES</a></li>
+          <li class="list-inline-item"><a class="text-decoration-none text-secondary me-2 mx-md-3 mx-lg-4 mx-xl-5" href="">TOUT</a></li>
+          <li class="list-inline-item"><a class="text-decoration-none text-secondary me-2 mx-md-3 mx-lg-4 mx-xl-5" href="">T-SHIRTS</a></li>
+          <li class="list-inline-item"><a class="text-decoration-none text-secondary me-2 mx-md-3 mx-lg-4 mx-xl-5" href="">SWEATS</a></li>
+          <li class="list-inline-item"><a class="text-decoration-none text-secondary me-2 mx-md-3 mx-lg-4 mx-xl-5" href="">JEANS</a></li>
+          <li class="list-inline-item"><a class="text-decoration-none text-secondary me-2 mx-md-3 mx-lg-4 mx-xl-5" href="">VESTES</a></li>
+          <li class="list-inline-item"><a class="text-decoration-none text-secondary me-2 mx-md-3 mx-lg-4 mx-xl-5" href="">ACCESSOIRES</a></li>
         </ul>
       </div>
     </div>
@@ -38,7 +38,7 @@
         <?php
                 foreach ($itemManager->getItems('ItemsController') as $items): ?>
 
-      <div class="col-3 my-4">
+      <div class="col-6 col-sm-4 col-lg-3 my-4 d-flex justify-content-center">
         <div class="card bg-product" style="width: 18rem;">
           <img src="data:image/png;base64,<?= base64_encode($items->item_img) ?>" class="card-img-top" alt="...">
           <div class="card-body">

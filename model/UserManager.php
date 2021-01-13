@@ -4,32 +4,31 @@
 */
 class UserManager extends Manager
 {
-	public function addUser ($user_login, $user_password)
+	public function addUser ($user_mail, $user_password)
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('INSERT INTO users_inscription (user_login, user_password, user_acces, user_date) VALUES (?, ?, 0, NOW())');
-		$req->execute([$user_login, $user_password]);
+		$req = $db->prepare('INSERT INTO users_information (user_mail, user_password, user_name, user_lastname, user_birthday, user_adress) VALUES (?, ?, ?, ?, NOW(), ?)');
+		$req->execute([$user_mail, $user_password, 't', 't', 't']);
 	}
 
-	public function updateUserLog($user_login, $user_password, $user_id)
+	/*public function updateUserLog($user_login, $user_password, $user_id)
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('UPDATE users_inscription SET user_login = ?, user_password = ? WHERE id = ?');
+		$req = $db->prepare('UPDATE users_information SET user_login = ?, user_password = ? WHERE id = ?');
 		$req->execute([$user_login, $user_password, $user_id]);
-	}
+	}*/
 
-	public function getUserLog($user_id, $class)
+	public function getUserLog($user_mail)
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('SELECT user_login, user_password FROM users_inscription WHERE id = ?');
-		$req->execute(array($user_id));
-		$req->setFetchMode(PDO::FETCH_CLASS, $class);
-		$datas = $req->fetch();
+		$req = $db->prepare('SELECT user_password FROM users_information WHERE user_mail = ?');
+		$req->execute([$user_mail]);
+		$data = $req->fetch();
 
-		return $datas;
+		return $data;
 	}
 
 	//On passe a ce qui touche a la table users_information

@@ -22,18 +22,20 @@
     <div class="row">
       <div class="col mt-5">
         <h1 class="text-center mt-5">Connexion</h1>
-        <form class="mb-3">
+        <form class="mb-3" method="post" action="index.php?p=connexion">
           <div class="mb-4 w-50">
             <label for="mail" class="form-label">E-mail</label>
-            <input type="email" class="form-control" id="mail">
+            <input type="email" class="form-control" id="mail" name="email">
           </div>
           <div class="mb-4 w-50">
             <label for="password" class="form-label">Mot de passe</label>
-            <input type="password" class="form-control" id="password">
+            <input type="password" class="form-control" id="password" name="password">
           </div>
-          <button type="submit" class="btn btn-warning my-3">Connexion</button>
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-warning my-3">Connexion</button>
+          </div>
         </form>
-        <a class="text-decoration-none text-dark registration" href="index.php?p=registration">Pas encore de compte! C'est par ici que sa ce passe</a>
+        <a class="text-decoration-none text-dark registration d-flex justify-content-center text-center" href="index.php?p=registration">Pas encore de compte! C'est par ici que sa ce passe</a>
       </div>
     </div>
   </div>

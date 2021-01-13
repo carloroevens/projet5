@@ -17,9 +17,24 @@
           <li class="nav-item me-3">
             <a class="nav-link link" href="#">Panier</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link link" href="index.php?p=connexion">Connexion</a>
-          </li>
+          <?php
+          if (isset($_SESSION['loger']) && $_SESSION['loger'] === 'yes') {
+            ?>
+            <li class="nav-item me-3">
+              <a class="nav-link link" href="index.php?p=profile">Profil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link" href="index.php?p=disconnection">Déconnexion</a>
+            </li>
+            <?php
+          } else {
+            ?>
+            <li class="nav-item">
+              <a class="nav-link link" href="index.php?p=connexionpage">Connexion</a>
+            </li>
+            <?php
+          }
+          ?>
         </ul>
       </div>
     </div>
