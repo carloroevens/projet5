@@ -42,6 +42,12 @@ try{
 	elseif ($p === 'profile') {
 		$appController->getProfilePage();
 	}
+	elseif ($p === 'information') {
+		$appController->getInformationPage();
+	}
+	elseif ($p === 'modifyinfos') {
+		$userController->modifyinfos();
+	}
 }
 
 catch(Exception $e)

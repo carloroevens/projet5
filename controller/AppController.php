@@ -50,4 +50,17 @@ class AppController
 			throw new Exception("Vous n'étes pas connecter");
 		}
 	}
+
+	public function getInformationPage()
+	{
+		if ($_SESSION['loger'] === 'yes' && isset($_SESSION['id'])) {
+			$userManager = new UserManager;
+			$user = $userManager->getUserInformation($_SESSION['id'], 'UsersController');
+			require 'view/information.php';
+		}
+		else
+		{
+			throw new Exception("Vous n'étes pas connecter");
+		}
+	}
 }

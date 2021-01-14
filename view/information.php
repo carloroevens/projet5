@@ -21,23 +21,36 @@
   <div class="container page">
     <div class="row">
       <div class="col mt-5">
-        <h1 class="text-center mt-5">Connexion</h1>
-        <form class="mb-3" method="post" action="index.php?p=connexion">
+        <h1 class="text-center mt-5">Informations</h1>
+        <form class="mb-3" method="post" action="index.php?p=modifyinfos">
           <div class="mb-4 w-50">
             <label for="mail" class="form-label">E-mail</label>
-            <input type="email" class="form-control" id="mail" name="email">
+            <input type="email" class="form-control" id="mail" name="email" value="<?= $user->user_mail ?>">
           </div>
           <div class="mb-4 w-50">
             <label for="password" class="form-label">Mot de passe</label>
             <input type="password" class="form-control" id="password" name="password">
           </div>
+          <div class="mb-4 w-50">
+            <label for="name" class="form-label">Prénom</label>
+            <input type="text" class="form-control" id="name" name="name" value="<?= $user->user_name ?>">
+          </div>
+          <div class="mb-4 w-50">
+            <label for="lastname" class="form-label">Nom</label>
+            <input type="text" class="form-control" id="lastname" name="lastname" value="<?= $user->user_lastname ?>">
+          </div>
+          <div class="mb-4 w-50">
+            <label for="birthday" class="form-label">Date de naissance</label>
+            <input type="date" class="form-control" id="birthday" name="birthday" value="<?= $user->user_birthday ?>">
+          </div>
+          <div class="mb-4 w-50">
+            <label for="adress" class="form-label">Adresse</label>
+            <input type="text" class="form-control" id="adress" name="adress" value="<?= $user->user_adress ?>">
+          </div>
           <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-warning my-3">Connexion</button>
+            <button type="submit" class="btn btn-warning my-3">Modifier</button>
           </div>
         </form>
-        <div class="text-center">
-          <a class="text-decoration-none text-dark registration" href="index.php?p=registration">Pas encore de compte! C'est par ici que sa ce passe</a>
-        </div>
       </div>
     </div>
   </div>

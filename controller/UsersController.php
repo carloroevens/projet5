@@ -39,6 +39,7 @@ class UsersController
 				$_SESSION['email'] = $_POST['email'];
 				$_SESSION['hashpassword'] = $hashPassword;
 				$_SESSION['loger'] = 'yes';
+				$_SESSION['id'] = $log['id'];
 				header('location: index.php?p=home');
 			}
 			else
@@ -56,5 +57,32 @@ class UsersController
 	{
 		session_destroy();
 		header('location: index.php?p=home');
+	}
+
+	public function modifyinfos()
+	{
+		if ($_SESSION['loger'] === 'yes') {
+
+			if (isset($_POST['password'])) {
+
+				$hashPassword = sha1($_POST['password']);
+
+				$userManager = new UserManager;
+				$userManager->updateUserInformation($_POST['email'], $hashPassword, $_POST['name'], $_POST['lastname'], $_POST['birthday'], $_POST['adress'], $_SESSION['id']);
+
+				header('location: index.php?p=information');
+			}
+			else
+			{
+				$userManager = new UserManager;
+				$userManager->updateUserInformation($_POST['email'], $_POST['name'], $_POST['lastname'], $_POST['birthday'], $_POST['adress'], $_SESSION['id']);
+
+				header('location: index.php?p=information');
+			}
+		}
+		else
+		{
+			throw new Exception("Vous n'étes pas connecter");
+		}
 	}
 }
