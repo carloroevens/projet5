@@ -21,7 +21,16 @@ ul li a:hover
 	border: none;
 }
 
-.card-body a ul
+.card-body ul
 {
 	margin-bottom: 0px;
+}
+
+.light
+{
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	position: absolute;
+    top: 30%;
 }

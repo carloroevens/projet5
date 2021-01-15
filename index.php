@@ -57,6 +57,15 @@ try{
 	elseif ($p === 'insertitem') {
 		$itemController->insertItem();
 	}
+	elseif ($p === 'productmanagement') {
+		$appController->getProductManagementPage();
+	}
+	elseif ($p === 'deleteitem') {
+		$itemController->deleteitem();
+	}
+	elseif ($p === 'stock') {
+		$appController->getStockPage($_GET['id']);
+	}
 }
 
 catch(Exception $e)

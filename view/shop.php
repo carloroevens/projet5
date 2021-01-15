@@ -43,9 +43,9 @@
           <img src="data:image/png;base64,<?= base64_encode($items->item_img) ?>" class="card-img-top" alt="...">
           <div class="card-body">
             <a class="stretched-link text-decoration-none" href="<?= $items->getUrl() ?>">
-              <ul class="list-inline d-flex justify-content-between">
-                <li class="card-title list-inline-item text-dark fs-3"><?= $items->item_name; ?></li>
-                <li class="card-text list-inline-item text-muted mt-2 fs-5"><?= $items->item_price; ?> €</li>
+              <ul class="list-unstyled">
+                <li class="card-title text-dark fs-3"><?= $items->item_name; ?></li>
+                <li class="card-text text-muted mt-2 fs-5"><?= $items->item_price; ?> €</li>
               </ul>
             </a>
           </div>

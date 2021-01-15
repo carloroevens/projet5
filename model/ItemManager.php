@@ -81,7 +81,7 @@ class ItemManager extends Manager
 		$req->execute([$item_numberofs, $item_numberofm, $item_numberofl, $item_numberofxl, $item_numberofxxl, $item_id]);
 	}
 
-	public function deletePost($item_id)
+	public function deleteSize($item_id)
 	{
 		$db = $this->dbConnect();
 
@@ -89,13 +89,26 @@ class ItemManager extends Manager
 		$req->execute(array($item_id));
 	}
 
-	public function getSize($class)
+	public function getSize($item_id, $class)
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->query('SELECT * FROM items_size');
-		
-		$datas = $req->fetchAll(PDO::FETCH_CLASS, $class);
+		$req = $db->prepare('SELECT * FROM items_size WHERE item_id = ?');	
+		$req->execute(array($item_id));
+		$req->setFetchMode(PDO::FETCH_CLASS, $class);
+		$datas = $req->fetchAll();
+
+		return $datas;
+	}
+
+	public function getSingleSize($item_id, $class)
+	{
+		$db = $this->dbConnect();
+
+		$req = $db->prepare('SELECT * FROM items_size WHERE item_id = ?');
+		$req->execute(array($item_id));
+		$req->setFetchMode(PDO::FETCH_CLASS, $class);
+		$datas = $req->fetch();
 
 		return $datas;
 	}

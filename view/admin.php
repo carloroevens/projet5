@@ -25,7 +25,7 @@
         <a class="btn btn-warning w-75 profile-btn fs-2 fw-bold" href="index.php?p=addproduct"><i class="fas fa-plus"></i><i class="fas fa-tshirt"></i><br>Ajout d'article</a>
       </div>
       <div class="col text-center">
-        <a class="btn btn-warning w-75 profile-btn fs-2 fw-bold" href=""><i class="fas fa-box-open"></i></i><br>Gestion des stocks</a>
+        <a class="btn btn-warning w-75 profile-btn fs-2 fw-bold" href="index.php?p=productmanagement"><i class="fas fa-box-open"></i></i><br>Gestion des stocks</a>
       </div>
     </div>
   </div>

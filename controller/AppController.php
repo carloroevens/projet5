@@ -85,4 +85,33 @@ class AppController
 			throw new Exception("Vous n'étes pas un administrateur");
 		}
 	}
+
+	public function getProductManagementPage()
+	{
+		if (isset($_SESSION['loger']) && $_SESSION['acces'] == 1) {
+
+			$itemManager = new ItemManager;
+			require 'view/productmanagement.php';
+		}
+		else
+		{
+			throw new Exception("Vous n'étes pas un administrateur");
+		}
+	}
+
+	public function getStockPage($idProduct)
+	{
+		if (isset($_SESSION['loger']) && $_SESSION['acces'] == 1) {
+
+			$itemManager = new ItemManager;
+			$item = $itemManager->getSingleItem($idProduct, 'ItemsController');
+			$size = $itemManager->getSingleSize($idProduct, 'ItemsController');
+
+			require 'view/stock.php';
+		}
+		else
+		{
+			throw new Exception("Vous n'étes pas un administrateur");
+		}
+	}
 }
