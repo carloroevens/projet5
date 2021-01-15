@@ -66,6 +66,10 @@ try{
 	elseif ($p === 'stock') {
 		$appController->getStockPage($_GET['id']);
 	}
+	elseif ($p === 'updatesize') {
+		$itemController->updateSizes();
+		echo "yes";
+	}
 }
 
 catch(Exception $e)

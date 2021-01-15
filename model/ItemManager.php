@@ -77,7 +77,7 @@ class ItemManager extends Manager
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('UPDATE items_size SET item_numberofs = ?, item_numberofm = ?, item_numberofl = ?, item_numberofxl = ?, item_numberofxxl = ?, WHERE item_id = ?');
+		$req = $db->prepare('UPDATE items_size SET item_numberofs = ?, item_numberofm = ?, item_numberofl = ?, item_numberofxl = ?, item_numberofxxl = ? WHERE item_id = ?');
 		$req->execute([$item_numberofs, $item_numberofm, $item_numberofl, $item_numberofxl, $item_numberofxxl, $item_id]);
 	}
 

@@ -25,6 +25,7 @@
         <img src="data:image/png;base64,<?= base64_encode($item->item_img) ?>" class="img-fluid" alt="...">
       </div>
       <div class="col-12 col-md-6 mt-5">
+        <a href="">♡</a>
         <h1 class="mt-5 ms-3"><?= $item->item_name; ?></h1>
         <p class="fs-4 mt-3 ms-3"><?= $item->item_description; ?></p>
         <p class="fw-bold fs-3 my-5 ms-3"><?= $item->item_price; ?> €</p>

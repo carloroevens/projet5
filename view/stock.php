@@ -29,18 +29,68 @@
         <p class="fw-bold fs-3 my-5 ms-3"><?= $item->item_price; ?> €</p>
         <hr>
         <div class="ms-3 fs-4">
-        <h3 class="my-4">Taille en stock</h3>
-        <p>Nombre de taille S: <?= $size->item_numberofs; ?></p>
-        <p>Nombre de taille M: <?= $size->item_numberofm; ?></p>
-        <p>Nombre de taille L: <?= $size->item_numberofl; ?></p>
-        <p>Nombre de taille XL: <?= $size->item_numberofxl; ?></p>
-        <p>Nombre de taille XXL: <?= $size->item_numberofxxl; ?></p>
-        <a href="" class="btn btn-secondary fs-5">Ajouter des tailles</a>
+          <h3 class="my-4">Taille en stock</h3>
+          <p>Nombre de taille S: <?= $size->item_numberofs; ?></p>
+          <p>Nombre de taille M: <?= $size->item_numberofm; ?></p>
+          <p>Nombre de taille L: <?= $size->item_numberofl; ?></p>
+          <p>Nombre de taille XL: <?= $size->item_numberofxl; ?></p>
+          <p>Nombre de taille XXL: <?= $size->item_numberofxxl; ?></p>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter des tailles</button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Mettre à jour les tailles du stock</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="post" action="index.php?p=updatesize&amp;id=<?= $item->id; ?>">
+                  <div class="modal-body text-center d-flex justify-content-center">
+                    <div class="mb-4 w-50">
+                      <label for="S" class="form-label">Taille S</label>
+                      <input type="number" class="form-control" id="S" name="numberofs" value="<?= $size->item_numberofs; ?>">
+                    
+                    
+                      <label for="M" class="form-label">Taille M</label>
+                      <input type="number" class="form-control" id="M" name="numberofm" value="<?= $size->item_numberofm; ?>">
+                    
+                    
+                      <label for="L" class="form-label">Taille L</label>
+                      <input type="number" class="form-control" id="L" name="numberofl" value="<?= $size->item_numberofl; ?>">
+                    
+                    
+                      <label for="XL" class="form-label">Taille XL</label>
+                      <input type="number" class="form-control" id="XL" name="numberofxl" value="<?= $size->item_numberofxl; ?>">
+                    
+                    
+                      <label for="XXL" class="form-label">Taille XXL</label>
+                      <input type="number" class="form-control" id="XXL" name="numberofxxl" value="<?= $size->item_numberofxxl; ?>">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    <button type="submit" class="btn btn-primary">Enregristrer</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
+  <?php
+
+    /*if (isset($_POST['numberofs'], $_POST['numberofm'], $_POST['numberofl'], $_POST['numberofxl'], $_POST['numberofxxl'])) {
+
+      $itemManager = new ItemManager;
+
+      $itemManager->updateSize($_POST['numberofs'], $_POST['numberofm'], $_POST['numberofl'], $_POST['numberofxl'], $_POST['numberofxxl'], $item->id);
+
+      header('refres: index.php?p=stock&id=$items->id');
+    }*/
+
+  ?>
   <?php
     require 'view/footer.php'
   ?>

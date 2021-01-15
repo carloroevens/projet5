@@ -40,4 +40,20 @@ class ItemsController
 			throw new Exception("Vous n'étes pas un administrateur");
 		}
 	}
+
+	public function updateSizes()
+	{
+		if (isset($_SESSION['loger']) && $_SESSION['acces'] == 1 && isset($_GET['id'])) {
+			$itemid = $_GET['id'];
+			$itemManager = new ItemManager;
+
+			$itemManager->updateSize($_POST['numberofs'], $_POST['numberofm'], $_POST['numberofl'], $_POST['numberofxl'], $_POST['numberofxxl'], $itemid);
+
+			header('location: index.php?p=stock&id=' . $itemid);
+		}
+		else
+		{
+			throw new Exception("Vous n'étes pas un administrateur");
+		}
+	}
 }
