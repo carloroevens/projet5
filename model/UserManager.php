@@ -24,7 +24,7 @@ class UserManager extends Manager
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('SELECT id, user_password FROM users_information WHERE user_mail = ?');
+		$req = $db->prepare('SELECT id, user_password, user_acces FROM users_information WHERE user_mail = ?');
 		$req->execute([$user_mail]);
 		$data = $req->fetch();
 

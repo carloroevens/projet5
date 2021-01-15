@@ -63,4 +63,26 @@ class AppController
 			throw new Exception("Vous n'étes pas connecter");
 		}
 	}
+
+	public function getAdminPage()
+	{
+		if (isset($_SESSION['loger']) && $_SESSION['acces'] == 1) {
+			require 'view/admin.php';
+		}
+		else
+		{
+			throw new Exception("Vous n'étes pas un administrateur");
+		}
+	}
+
+	public function getAddProductPage()
+	{
+		if (isset($_SESSION['loger']) && $_SESSION['acces'] == 1) {
+			require 'view/addproduct.php';
+		}
+		else
+		{
+			throw new Exception("Vous n'étes pas un administrateur");
+		}
+	}
 }

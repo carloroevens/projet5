@@ -40,6 +40,7 @@ class UsersController
 				$_SESSION['hashpassword'] = $hashPassword;
 				$_SESSION['loger'] = 'yes';
 				$_SESSION['id'] = $log['id'];
+				$_SESSION['acces'] = $log['user_acces'];
 				header('location: index.php?p=home');
 			}
 			else

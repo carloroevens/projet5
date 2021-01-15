@@ -18,10 +18,22 @@
             <a class="nav-link link" href="#">Panier</a>
           </li>
           <?php
-          if (isset($_SESSION['loger']) && $_SESSION['loger'] === 'yes') {
+          if (isset($_SESSION['loger']) && $_SESSION['loger'] === 'yes' && $_SESSION['acces'] == 0) {
             ?>
             <li class="nav-item me-3">
               <a class="nav-link link" href="index.php?p=profile">Profil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link" href="index.php?p=disconnection">Déconnexion</a>
+            </li>
+            <?php
+          }elseif (isset($_SESSION['acces']) && $_SESSION['acces'] == 1) {
+            ?>
+            <li class="nav-item me-3">
+              <a class="nav-link link" href="index.php?p=profile">Profil</a>
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link link" href="index.php?p=admin">Administration</a>
             </li>
             <li class="nav-item">
               <a class="nav-link link" href="index.php?p=disconnection">Déconnexion</a>

@@ -8,4 +8,22 @@ class ItemsController
 	{
 		return 'index.php?p=single&idProduct=' . $this->id;
 	}
+
+	public function insertItem()
+	{
+		$itemManager = new ItemManager;
+
+		//$img = $_POST['img'];
+
+		$binimg = file_get_contents($_FILES);
+
+		/*$handle = fopen($img, "rb");
+		$contents = fread($handle, filesize($img));
+		fclose($handle);*/
+
+		//$img_bin = fread(fopen($img, "r"), filesize($img));
+
+
+		$test = $itemManager->addItem($_POST['name'], $_POST['price'], $_POST['description'], $binimg, $_POST['category']);
+	}
 }

@@ -48,6 +48,15 @@ try{
 	elseif ($p === 'modifyinfos') {
 		$userController->modifyinfos();
 	}
+	elseif ($p === 'admin') {
+		$appController->getAdminPage();
+	}
+	elseif ($p === 'addproduct') {
+		$appController->getAddProductPage();
+	}
+	elseif ($p === 'insertitem') {
+		$itemController->insertItem();
+	}
 }
 
 catch(Exception $e)
