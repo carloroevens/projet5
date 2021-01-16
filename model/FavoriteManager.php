@@ -17,16 +17,16 @@ class FavoriteManager extends Manager
 		$db = $this->dbConnect();
 
 		$req = $db->prepare('DELETE FROM favorite WHERE item_id = ?');
-		$req->execute([$item_id])
+		$req->execute([$item_id]);
 	}
 
-	public function getFavorite($user_id, $class)
+	public function getFavorite($user_id)
 	{
 		$db = $this->dbConnect();
 
 		$req = $db->prepare('SELECT item_id FROM favorite WHERE user_id = ?');
 		$req->execute([$user_id]);
-		$datas = $req->fetchAll(PDO::FETCH_CLASS, $class);
+		$datas = $req->fetchAll();
 
 		return $datas;
 	}

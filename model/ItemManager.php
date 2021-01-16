@@ -39,6 +39,18 @@ class ItemManager extends Manager
 		return $datas;
 	}
 
+	public function getFavoriteItems($item_id, $class)
+	{
+		$db = $this->dbConnect();
+
+		$req = $db->prepare('SELECT * FROM items_description WHERE id = ?');
+		$req->execute([$item_id]);
+		
+		$datas = $req->fetchAll(PDO::FETCH_CLASS, $class);
+
+		return $datas;
+	}
+
 	public function getSingleItem($item_id, $class)
 	{
 		$db = $this->dbConnect();

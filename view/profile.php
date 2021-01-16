@@ -25,7 +25,7 @@
         <a class="btn btn-warning w-75 profile-btn fs-2 fw-bold" href="index.php?p=information"><i class="fas fa-user"></i></i><br>INFORMATIONS</a>
       </div>
       <div class="col text-center">
-        <a class="btn btn-warning w-75 profile-btn fs-2 fw-bold" href=""><i class="fas fa-heart"></i><br>FAVORIS</a>
+        <a class="btn btn-warning w-75 profile-btn fs-2 fw-bold" href="index.php?p=getfavoritepage"><i class="fas fa-heart"></i><br>FAVORIS</a>
       </div>
     </div>
   </div>

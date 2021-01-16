@@ -86,4 +86,34 @@ class UsersController
 			throw new Exception("Vous n'étes pas connecter");
 		}
 	}
+
+	public function addFavorite($itemid)
+	{
+		if ($_SESSION['loger'] === 'yes') {
+			$favoriteManager = new FavoriteManager;
+
+			$favoriteManager->addFavorite($_SESSION['id'], $itemid);
+
+			header('location: index.php?p=single&idProduct=' . $itemid);
+		}
+		else
+		{
+			throw new Exception("Vous n'étes pas connecter");
+		}
+	}
+
+	public function removeFavorite($itemid)
+	{
+		if ($_SESSION['loger'] === 'yes') {
+			$favoriteManager = new FavoriteManager;
+
+			$favoriteManager->deleteFavorite($itemid);
+
+			header('location: index.php?p=single&idProduct=' . $itemid);
+		}
+		else
+		{
+			throw new Exception("Vous n'étes pas connecter");
+		}
+	}
 }

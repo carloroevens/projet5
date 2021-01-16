@@ -20,6 +20,7 @@ class AppController
 	{
 		if (isset($idProduct) && $idProduct > 0) {
 			$itemManager = new ItemManager;
+			$favoriteManager = new FavoriteManager;
 			$item = $itemManager->getSingleItem($idProduct, 'ItemsController');
 
 			require 'view/single.php';
@@ -112,6 +113,21 @@ class AppController
 		else
 		{
 			throw new Exception("Vous n'étes pas un administrateur");
+		}
+	}
+
+	public function getFavoritePage()
+	{
+		if ($_SESSION['loger'] === 'yes' && isset($_SESSION['id'])) {
+			
+			$favoriteManager = new FavoriteManager;
+			$itemManager = new ItemManager;
+			
+			require 'view/favorite.php';
+		}
+		else
+		{
+			throw new Exception("Vous n'étes pas connecter");
 		}
 	}
 }

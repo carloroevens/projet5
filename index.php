@@ -68,7 +68,15 @@ try{
 	}
 	elseif ($p === 'updatesize') {
 		$itemController->updateSizes();
-		echo "yes";
+	}
+	elseif ($p === 'addfavorite') {
+		$userController->addFavorite($_GET['itemid']);
+	}
+	elseif ($p === 'removefavorite') {
+		$userController->removeFavorite($_GET['itemid']);
+	}
+	elseif ($p === 'getfavoritepage') {
+		$appController->getFavoritePage();
 	}
 }
 

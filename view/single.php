@@ -25,8 +25,21 @@
         <img src="data:image/png;base64,<?= base64_encode($item->item_img) ?>" class="img-fluid" alt="...">
       </div>
       <div class="col-12 col-md-6 mt-5">
-        <a href="">♡</a>
-        <h1 class="mt-5 ms-3"><?= $item->item_name; ?></h1>
+        <?php
+          $fav = $favoriteManager->getFavorite($_SESSION['id']);
+          if (in_array($item->id, array_column($fav, 'item_id'))) {
+            ?>
+            <a href="index.php?p=removefavorite&amp;itemid=<?= $item->id; ?>" class="text-decoration-none ms-3 text-danger">♥ Retirer des favoris</a>
+            <?php
+          }
+          else{
+            ?>
+            <a href="index.php?p=addfavorite&amp;itemid=<?= $item->id; ?>" class="text-decoration-none ms-3 text-danger">♡ Ajouter aux favoris</a>
+            <?php
+          }
+
+        ?>
+        <h1 class="ms-3"><?= $item->item_name; ?></h1>
         <p class="fs-4 mt-3 ms-3"><?= $item->item_description; ?></p>
         <p class="fw-bold fs-3 my-5 ms-3"><?= $item->item_price; ?> €</p>
         <hr>
