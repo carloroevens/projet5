@@ -23,3 +23,8 @@ body {
 .page {
 	flex: 1;
 }
+
+.form-text
+{
+	margin-left: 0px;
+}

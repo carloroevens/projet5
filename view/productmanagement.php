@@ -53,7 +53,7 @@
                 endforeach; ?>
             </div>
             <div class="text-center">
-            <a href="" class="btn btn-info mt-2 w-100">Modifier</a>
+            <a href="index.php?p=modifyitempage&amp;id=<?= $items->id; ?>" class="btn btn-info mt-2 w-100">Modifier</a>
             </div>
             <div class="text-center">
             <a href="index.php?p=deleteitem&amp;id=<?= $items->id; ?>" class="btn btn-danger mt-2 w-100">Suprimer</a>

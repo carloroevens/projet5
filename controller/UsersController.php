@@ -83,7 +83,7 @@ class UsersController
 		}
 		else
 		{
-			throw new Exception("Vous n'étes pas connecter");
+			throw new Exception("Vous n'êtes pas connecter");
 		}
 	}
 
@@ -98,7 +98,7 @@ class UsersController
 		}
 		else
 		{
-			throw new Exception("Vous n'étes pas connecter");
+			throw new Exception("Vous n'êtes pas connecter");
 		}
 	}
 
@@ -113,7 +113,7 @@ class UsersController
 		}
 		else
 		{
-			throw new Exception("Vous n'étes pas connecter");
+			throw new Exception("Vous n'êtes pas connecter");
 		}
 	}
 }

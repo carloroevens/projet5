@@ -20,6 +20,14 @@ class ItemManager extends Manager
 		$req->execute([$item_name, $item_price, $item_description, $item_img, $item_category, $item_id]);
 	}
 
+	public function updateItemNoImg($item_name, $item_price, $item_description, $item_category, $item_id)
+	{
+		$db = $this->dbConnect();
+
+		$req = $db->prepare('UPDATE items_description SET item_name = ?, item_price = ?, item_description = ?, item_category = ? WHERE id = ?');
+		$req->execute([$item_name, $item_price, $item_description, $item_category, $item_id]);
+	}
+
 	public function deleteItem($item_id)
 	{
 		$db = $this->dbConnect();
@@ -73,6 +81,18 @@ class ItemManager extends Manager
 		$datas = $req->fetchAll();
 
 		return $datas;
+	}
+
+	public function getItemByName($item_name)
+	{
+		$db = $this->dbConnect();
+
+		$req = $db->prepare('SELECT id FROM items_description WHERE item_name = ?');
+		$req->execute(array($item_name));
+		//$req->setFetchMode(PDO::FETCH_CLASS, $class);
+		$data = $req->fetch();
+
+		return $data;
 	}
 
 	//On passe a la table items_size

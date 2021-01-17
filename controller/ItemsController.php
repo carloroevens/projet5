@@ -11,20 +11,23 @@ class ItemsController
 
 	public function insertItem()
 	{
-		$itemManager = new ItemManager;
+		if (isset($_SESSION['loger']) && $_SESSION['acces'] == 1) {
+			$itemManager = new ItemManager;
 
-		//$img = $_POST['img'];
+			$productName = $_POST['name'];
+			
+			$binimg = file_get_contents($_FILES['img']['tmp_name']);
 
-		$binimg = file_get_contents($_FILES);
+			$itemManager->addItem($productName, $_POST['price'], $_POST['description'], $binimg, $_POST['category']);
 
-		/*$handle = fopen($img, "rb");
-		$contents = fread($handle, filesize($img));
-		fclose($handle);*/
+			$idProduct = $itemManager->getItemByName($productName);
 
-		//$img_bin = fread(fopen($img, "r"), filesize($img));
-
-
-		$test = $itemManager->addItem($_POST['name'], $_POST['price'], $_POST['description'], $binimg, $_POST['category']);
+			header('location: index.php?p=addsizespage&id=' . $idProduct['id']);
+		}
+		else
+		{
+			throw new Exception("Vous n'êtes pas un administrateur");
+		}
 	}
 
 	public function deleteitem()
@@ -37,7 +40,7 @@ class ItemsController
 		}
 		else
 		{
-			throw new Exception("Vous n'étes pas un administrateur");
+			throw new Exception("Vous n'êtes pas un administrateur");
 		}
 	}
 
@@ -53,7 +56,49 @@ class ItemsController
 		}
 		else
 		{
-			throw new Exception("Vous n'étes pas un administrateur");
+			throw new Exception("Vous n'êtes pas un administrateur");
+		}
+	}
+
+	public function addSizes()
+	{
+		if (isset($_SESSION['loger']) && $_SESSION['acces'] == 1 && isset($_GET['id'])) {
+			$itemManager = new ItemManager;
+
+			$productId = $_GET['id'];
+
+			$itemManager->addSize($productId, $_POST['numberofs'], $_POST['numberofm'], $_POST['numberofl'], $_POST['numberofxl'], $_POST['numberofxxl']);
+			header('location: index.php?p=admin');
+		}
+		else
+		{
+			throw new Exception("Vous n'êtes pas un administrateur");
+		}
+	}
+
+	public function modifyItem()
+	{
+		if (isset($_SESSION['loger']) && $_SESSION['acces'] == 1) {
+			$itemManager = new ItemManager;
+
+			if (empty($_FILES['img']['tmp_name'])) {
+				
+				$itemManager->updateItemNoImg($_POST['name'], $_POST['price'], $_POST['description'], $_POST['category'], $_GET['id']);
+				
+				header('location: index.php?p=productmanagement');
+			}
+			else
+			{
+				$binimg = file_get_contents($_FILES['img']['tmp_name']);
+
+				$itemManager->updateItem($_POST['name'], $_POST['price'], $_POST['description'], $binimg, $_POST['category'], $_GET['id']);
+
+				header('location: index.php?p=productmanagement');
+			}
+		}
+		else
+		{
+			throw new Exception("Vous n'êtes pas un administrateur");
 		}
 	}
 }

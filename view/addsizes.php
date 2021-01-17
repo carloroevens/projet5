@@ -21,36 +21,30 @@
   <div class="container page">
     <div class="row">
       <div class="col mt-5">
-        <h1 class="text-center mt-5">Ajouter un article</h1>
-        <form class="mb-3" method="post" action="index.php?p=insertitem" enctype="multipart/form-data">
+        <h1 class="text-center my-5">Ajouter le nombre de taille</h1>
+        <form class="mb-3" method="post" action="index.php?p=addsizes&amp;id=<?= $_GET['id']; ?>">
           <div class="mb-4 w-50">
-            <label for="name" class="form-label">Titre</label>
-            <input type="text" class="form-control" id="name" name="name">
+            <label for="S" class="form-label">Taille S</label>
+            <input type="number" class="form-control" id="S" name="numberofs">
           </div>
           <div class="mb-4 w-50">
-            <label for="price" class="form-label">Prix</label>
-            <input type="number" class="form-control" id="price" name="price">
+            <label for="M" class="form-label">Taille M</label>
+            <input type="number" class="form-control" id="M" name="numberofm">
           </div>
           <div class="mb-4 w-50">
-            <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+            <label for="L" class="form-label">Taille L</label>
+            <input type="number" class="form-control" id="L" name="numberofl">
           </div>
           <div class="mb-4 w-50">
-            <label for="img" class="form-label">Photo</label>
-            <input class="form-control" type="file" id="img" name="img">
+            <label for="XL" class="form-label">Taille XL</label>
+            <input type="number" class="form-control" id="XL" name="numberofxl">
           </div>
           <div class="mb-4 w-50">
-            <label for="category" class="form-label">Catégorie</label>
-            <select class="form-select" id="category" name="category">
-              <option value="T-SHIRT">T-SHIRT</option>
-              <option value="SWEAT">SWEAT</option>
-              <option value="JEAN">JEAN</option>
-              <option value="VESTE">VESTE</option>
-              <option value="ACCESSOIRE">ACCESSOIRE</option>
-            </select>
+            <label for="XXL" class="form-label">Taille XXL</label>
+            <input type="number" class="form-control" id="XXL" name="numberofxxl">
           </div>
           <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-warning my-3">Ajouter cette article</button>
+            <button type="submit" class="btn btn-warning my-3">Ajouter les tailles</button>
           </div>
         </form>
       </div>

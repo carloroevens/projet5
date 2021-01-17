@@ -78,6 +78,18 @@ try{
 	elseif ($p === 'getfavoritepage') {
 		$appController->getFavoritePage();
 	}
+	elseif ($p === 'addsizespage') {
+		$appController->getAddSizesPage();
+	}
+	elseif ($p === 'addsizes') {
+		$itemController->addSizes();
+	}
+	elseif ($p === 'modifyitempage') {
+		$appController->getModifyItemPage();
+	}
+	elseif ($p === 'modifyitem') {
+		$itemController->modifyItem();
+	}
 }
 
 catch(Exception $e)

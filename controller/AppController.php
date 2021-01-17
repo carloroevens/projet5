@@ -48,7 +48,7 @@ class AppController
 		}
 		else
 		{
-			throw new Exception("Vous n'étes pas connecter");
+			throw new Exception("Vous n'êtes pas connecter");
 		}
 	}
 
@@ -61,7 +61,7 @@ class AppController
 		}
 		else
 		{
-			throw new Exception("Vous n'étes pas connecter");
+			throw new Exception("Vous n'êtes pas connecter");
 		}
 	}
 
@@ -72,7 +72,7 @@ class AppController
 		}
 		else
 		{
-			throw new Exception("Vous n'étes pas un administrateur");
+			throw new Exception("Vous n'êtes pas un administrateur");
 		}
 	}
 
@@ -83,7 +83,7 @@ class AppController
 		}
 		else
 		{
-			throw new Exception("Vous n'étes pas un administrateur");
+			throw new Exception("Vous n'êtes pas un administrateur");
 		}
 	}
 
@@ -96,7 +96,7 @@ class AppController
 		}
 		else
 		{
-			throw new Exception("Vous n'étes pas un administrateur");
+			throw new Exception("Vous n'êtes pas un administrateur");
 		}
 	}
 
@@ -112,7 +112,7 @@ class AppController
 		}
 		else
 		{
-			throw new Exception("Vous n'étes pas un administrateur");
+			throw new Exception("Vous n'êtes pas un administrateur");
 		}
 	}
 
@@ -127,7 +127,31 @@ class AppController
 		}
 		else
 		{
-			throw new Exception("Vous n'étes pas connecter");
+			throw new Exception("Vous n'êtes pas connecter");
+		}
+	}
+
+	public function getAddSizesPage()
+	{
+		if (isset($_SESSION['loger']) && $_SESSION['acces'] == 1) {
+			require 'view/addsizes.php';
+		}
+		else
+		{
+			throw new Exception("Vous n'êtes pas un administrateur");
+		}
+	}
+
+	public function getModifyItemPage()
+	{
+		if (isset($_SESSION['loger']) && $_SESSION['acces'] == 1 && isset($_GET['id']) && $_GET['id'] > 0) {
+			$itemManager = new ItemManager;
+			$item = $itemManager->getSingleItem($_GET['id'], 'ItemsController');
+			require 'view/modifyitem.php';
+		}
+		else
+		{
+			throw new Exception("Vous n'êtes pas un administrateur");
 		}
 	}
 }
