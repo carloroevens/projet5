@@ -71,12 +71,12 @@ class ItemManager extends Manager
 		return $datas;
 	}
 
-	public function getRecommendationItem($item_category, $class)
+	public function getRecommendationItem($item_category, $item_id, $class)
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('SELECT id, item_name, item_price, item_img FROM items_description WHERE item_category = ? LIMIT 0, 4');
-		$req->execute(array($item_category));
+		$req = $db->prepare('SELECT id, item_name, item_price, item_img FROM items_description WHERE item_category = ? AND id != ? LIMIT 0, 4');
+		$req->execute(array($item_category, $item_id));
 		$req->setFetchMode(PDO::FETCH_CLASS, $class);
 		$datas = $req->fetchAll();
 

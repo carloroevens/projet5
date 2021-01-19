@@ -5,7 +5,7 @@
             <p class="text-dark text-uppercase">Plan du site</p>
             <ul class="list-unstyled">
               <li class="mb-3">
-                <a class="text-decoration-none link" href="">Vêtements</a>
+                <a class="text-decoration-none link" href="index.php?p=shop">Vêtements</a>
               </li>
               <li>
                 <a class="text-decoration-none link" href="">Collections</a>

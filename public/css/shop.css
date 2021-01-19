@@ -34,3 +34,18 @@ ul li a:hover
 	position: absolute;
     top: 30%;
 }
+
+.img-size
+{
+	height: 400px;
+}
+
+.no-stock
+{
+	position: absolute;
+    height: 400px;
+    width: 18rem;
+    background-color: black;
+    opacity: 0.6;
+    top: 0;
+}

@@ -23,9 +23,9 @@
       <?php
                 foreach ($itemManager->getItems('ItemsController') as $items): ?>
 
-      <div class="col-6 col-sm-4 col-lg-3 my-4 d-flex justify-content-center">
+      <div class="col-12 col-sm-6 col-lg-3 my-4 d-flex justify-content-center">
         <div class="card bg-product" style="width: 18rem;">
-          <img src="data:image/png;base64,<?= base64_encode($items->item_img) ?>" class="card-img-top" alt="...">
+          <img src="data:image/png;base64,<?= base64_encode($items->item_img) ?>" class="card-img-top img-size img-fluid" alt="...">
           <div class="card-body">
             <ul class="list-unstyled mb-2">
               <li class="card-title text-dark fs-3"><?= $items->item_name; ?></li>

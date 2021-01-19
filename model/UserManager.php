@@ -31,6 +31,17 @@ class UserManager extends Manager
 		return $data;
 	}
 
+	public function countUserMail($user_mail)
+	{
+		$db = $this->dbConnect();
+
+		$req = $db->prepare('SELECT COUNT(*) FROM users_information WHERE user_mail = ?');
+		$req->execute([$user_mail]);
+		$data = $req->fetch();
+
+		return $data;
+	}
+
 	//On passe a ce qui touche a la table users_information
 
 	/*public function addUserInformation($user_id, $user_name, $user_lastname, $user_mail, $user_adress)

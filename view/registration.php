@@ -31,6 +31,10 @@
             <label for="password" class="form-label">Mot de passe</label>
             <input type="password" class="form-control" id="password" name="password">
           </div>
+          <div class="mb-4 w-50">
+            <label for="Comf-password" class="form-label">Comfirmer votre mot de passe</label>
+            <input type="password" class="form-control" id="Comf-password" name="Comf-password">
+          </div>
           <div class="d-flex justify-content-center">
             <button type="submit" class="btn btn-warning my-3">Inscription</button>
           </div>

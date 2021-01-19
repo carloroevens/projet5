@@ -16,12 +16,33 @@ label
     cursor: pointer;
 }
 
+.no-sizes
+{
+	width: 50px;
+	height: 50px;
+	-webkit-appearance: none;
+    background-color: red;
+    border-radius: 50%;
+    margin: 0;
+    outline: none;
+    border: black solid 1px;
+    cursor: not-allowed;
+}
+
 label span
 {
 	position: absolute;
     top: 21%;
     color: black;
     cursor: pointer;
+}
+
+.empty
+{
+	position: absolute;
+    top: 21%;
+    color: white;
+    cursor: not-allowed;
 }
 
 ul li:nth-child(1) span

@@ -22,6 +22,7 @@ class AppController
 			$itemManager = new ItemManager;
 			$favoriteManager = new FavoriteManager;
 			$item = $itemManager->getSingleItem($idProduct, 'ItemsController');
+			$size = $itemManager->getSingleSize($idProduct, 'ItemsController');
 
 			require 'view/single.php';
 		}

@@ -8,15 +8,29 @@ class UsersController
 {
 	public function addUser()
 	{
-		if (isset($_POST['email']) && isset($_POST['password'])) {
+		if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['Comf-password'])) {
 
-			$hashPassword = sha1($_POST['password']);
+			if ($_POST['password'] === $_POST['Comf-password']) {
+				$userManager = new UserManager;
 
-			$userManager = new UserManager;
+				$getmail = $userManager->countUserMail($_POST['email']);
+				
+				if (in_array(1, $getmail)) {
 
-			$userManager->addUser($_POST['email'], $hashPassword);
+					throw new Exception("Il existe déja un compte avec cette adresse mail");
+				}
+				else
+				{
+					$hashPassword = sha1($_POST['password']);
+					$userManager->addUser($_POST['email'], $hashPassword);
 
-			require 'view/connexion.php';
+					require 'view/connexion.php';
+				}
+			}
+			else
+			{
+				throw new Exception("Mot de passe différent");
+			}
 		}
 		else
 		{
@@ -93,8 +107,6 @@ class UsersController
 			$favoriteManager = new FavoriteManager;
 
 			$favoriteManager->addFavorite($_SESSION['id'], $itemid);
-
-			header('location: index.php?p=single&idProduct=' . $itemid);
 		}
 		else
 		{
@@ -108,8 +120,6 @@ class UsersController
 			$favoriteManager = new FavoriteManager;
 
 			$favoriteManager->deleteFavorite($itemid);
-
-			header('location: index.php?p=single&idProduct=' . $itemid);
 		}
 		else
 		{

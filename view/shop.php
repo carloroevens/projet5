@@ -38,9 +38,24 @@
         <?php
                 foreach ($itemManager->getItems('ItemsController') as $items): ?>
 
-      <div class="col-6 col-sm-4 col-lg-3 my-4 d-flex justify-content-center">
+      <div class="col-12 col-sm-6 col-lg-3 my-4 d-flex justify-content-center">
         <div class="card bg-product" style="width: 18rem;">
-          <img src="data:image/png;base64,<?= base64_encode($items->item_img) ?>" class="card-img-top" alt="...">
+          <div class="position-relative">
+            <img src="data:image/png;base64,<?= base64_encode($items->item_img) ?>" class="card-img-top img-size img-fluid" alt="...">
+            <?php
+            /*
+
+            PRODUIT ÉPUISÉ
+
+              if ($size->item_numberofs, $size->item_numberofm, $size->item_numberofl, $size->item_numberofxl, $size->item_numberofxxl < 1) {
+                ?>
+                <div class="no-stock">
+                  <p class="text-warning fs-4 text-center mt-5">PRODUIT ÉPUISÉ</p>
+                </div>
+                <?php
+              }*/
+            ?>
+          </div>
           <div class="card-body">
             <a class="stretched-link text-decoration-none" href="<?= $items->getUrl() ?>">
               <ul class="list-unstyled">
