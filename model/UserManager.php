@@ -1,7 +1,7 @@
 <?php
-/*
-*	Cette class s'occupe des fonctions SQL pour la connection et les informations des utilisateurs
-*/
+/**
+ *	Cette class s'occupe des fonctions SQL pour la connection et les informations des utilisateurs
+ */
 class UserManager extends Manager
 {
 	public function addUser ($user_mail, $user_password)
@@ -11,14 +11,6 @@ class UserManager extends Manager
 		$req = $db->prepare('INSERT INTO users_information (user_mail, user_password, user_name, user_lastname, user_birthday, user_adress) VALUES (?, ?, ?, ?, NOW(), ?)');
 		$req->execute([$user_mail, $user_password, '', '', '']);
 	}
-
-	/*public function updateUserLog($user_login, $user_password, $user_id)
-	{
-		$db = $this->dbConnect();
-
-		$req = $db->prepare('UPDATE users_information SET user_login = ?, user_password = ? WHERE id = ?');
-		$req->execute([$user_login, $user_password, $user_id]);
-	}*/
 
 	public function getUserLog($user_mail)
 	{
@@ -41,16 +33,6 @@ class UserManager extends Manager
 
 		return $data;
 	}
-
-	//On passe a ce qui touche a la table users_information
-
-	/*public function addUserInformation($user_id, $user_name, $user_lastname, $user_mail, $user_adress)
-	{
-		$db = $this->dbConnect();
-
-		$req = $db->prepare('INSERT INTO users_information (user_id, user_name, user_lastname, user_mail, user_adress) VALUES (?, ?, ?, ?, ?)');
-		$req->execute([$user_id, $user_name, $user_lastname, $user_mail, $user_adress]);
-	}*/
 
 	public function updateUserInformation($user_mail, $user_password, $user_name, $user_lastname, $user_birthday, $user_adress, $user_id)
 	{

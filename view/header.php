@@ -15,7 +15,18 @@
         </ul>
         <ul class="navbar-nav ms-auto me-5">
           <li class="nav-item me-3">
-            <a class="nav-link link" href="#">Panier</a>
+            <?php
+              if (isset($_SESSION['panier']) && $_SESSION['panier'] > 0) {
+                ?>
+                <a class="nav-link link" href="index.php?p=cartpage">Panier (<?= $_SESSION['panier'] ?>) </a>
+                <?php
+              } else
+              {
+                ?>
+                <a class="nav-link link" href="index.php?p=cartpage">Panier</a>
+                <?php
+              }
+            ?>
           </li>
           <?php
           if (isset($_SESSION['loger']) && $_SESSION['loger'] === 'yes' && $_SESSION['acces'] == 0) {

@@ -89,10 +89,21 @@ class ItemManager extends Manager
 
 		$req = $db->prepare('SELECT id FROM items_description WHERE item_name = ?');
 		$req->execute(array($item_name));
-		//$req->setFetchMode(PDO::FETCH_CLASS, $class);
 		$data = $req->fetch();
 
 		return $data;
+	}
+
+	public function getItemByCategory($item_category, $class)
+	{
+		$db = $this->dbConnect();
+
+		$req = $db->prepare('SELECT id, item_name, item_price, item_img FROM items_description WHERE item_category = ? ');
+		$req->execute(array($item_category));
+		$req->setFetchMode(PDO::FETCH_CLASS, $class);
+		$datas = $req->fetchAll();
+
+		return $datas;
 	}
 
 	//On passe a la table items_size

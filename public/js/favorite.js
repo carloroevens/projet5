@@ -10,8 +10,7 @@ action.addEventListener('click', function (e) {
 
 	if (httpRequest.readyState === 4) {
 			document.location.reload();
-
-		}
+	}
 };
 
 httpRequest.open('GET', url, true);

@@ -155,4 +155,17 @@ class AppController
 			throw new Exception("Vous n'êtes pas un administrateur");
 		}
 	}
+
+	public function getCartPage()
+	{
+		if (isset($_SESSION['loger']) && $_SESSION['loger'] == 'yes') {
+			$cartManager = new CartManager;
+			$itemManager = new ItemManager;
+			require 'view/cart.php';
+		}
+		else
+		{
+			throw new Exception("Vous n'êtes pas connecter");
+		}
+	}
 }

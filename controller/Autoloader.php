@@ -9,7 +9,7 @@ class Autoloader {
 	}
 
 	static function autoload($class) {
-		if ($class == 'Manager' || $class == 'ItemManager' || $class == 'UserManager' || $class == 'FavoriteManager') {
+		if ($class == 'Manager' || $class == 'ItemManager' || $class == 'UserManager' || $class == 'FavoriteManager' || $class == 'CartManager') {
 			require 'model/' . $class . '.php';
 		}
 		else {

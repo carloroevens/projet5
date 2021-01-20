@@ -55,6 +55,7 @@ class UsersController
 				$_SESSION['loger'] = 'yes';
 				$_SESSION['id'] = $log['id'];
 				$_SESSION['acces'] = $log['user_acces'];
+				$_SESSION['panier'] = 0;
 				header('location: index.php?p=home');
 			}
 			else

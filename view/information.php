@@ -25,7 +25,7 @@
         <form class="mb-3" method="post" action="index.php?p=modifyinfos">
           <div class="mb-4 w-50">
             <label for="mail" class="form-label">E-mail</label>
-            <input type="email" class="form-control" id="mail" name="email" value="<?= $user->user_mail ?>">
+            <input type="email" class="form-control" id="mail" name="email" value="<?= htmlspecialchars($user->user_mail) ?>">
           </div>
           <div class="mb-4 w-50">
             <label for="password" class="form-label">Mot de passe</label>
@@ -33,19 +33,19 @@
           </div>
           <div class="mb-4 w-50">
             <label for="name" class="form-label">Prénom</label>
-            <input type="text" class="form-control" id="name" name="name" value="<?= $user->user_name ?>">
+            <input type="text" class="form-control" id="name" name="name" value="<?= htmlspecialchars($user->user_name) ?>">
           </div>
           <div class="mb-4 w-50">
             <label for="lastname" class="form-label">Nom</label>
-            <input type="text" class="form-control" id="lastname" name="lastname" value="<?= $user->user_lastname ?>">
+            <input type="text" class="form-control" id="lastname" name="lastname" value="<?= htmlspecialchars($user->user_lastname) ?>">
           </div>
           <div class="mb-4 w-50">
             <label for="birthday" class="form-label">Date de naissance</label>
-            <input type="date" class="form-control" id="birthday" name="birthday" value="<?= $user->user_birthday ?>">
+            <input type="date" class="form-control" id="birthday" name="birthday" value="<?= htmlspecialchars($user->user_birthday) ?>">
           </div>
           <div class="mb-4 w-50">
             <label for="adress" class="form-label">Adresse</label>
-            <input type="text" class="form-control" id="adress" name="adress" value="<?= $user->user_adress ?>">
+            <input type="text" class="form-control" id="adress" name="adress" value="<?= htmlspecialchars($user->user_adress) ?>">
           </div>
           <div class="d-flex justify-content-center">
             <button type="submit" class="btn btn-warning my-3">Modifier</button>

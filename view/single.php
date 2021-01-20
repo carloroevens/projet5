@@ -46,14 +46,14 @@
         <p class="fw-bold fs-3 my-5 ms-3"><?= $item->item_price; ?> €</p>
         <hr>
         <h3 class="my-4 ms-3">Taille</h3>
-        <form>
+        <form method="post" action="index.php?p=addcart&amp;id=<?= $item->id; ?>">
           <ul class="list-unstyled list-inline mb-5">
             <li class="list-inline-item">
               <?php
                 if ($size->item_numberofs < 1) {
                   ?>
                     <label>
-                      <input class="no-sizes" id="disabledTextInput" type="radio" name="sizes">
+                      <input class="no-sizes" id="disabledTextInput" type="radio" value="S" name="sizes">
                       <span class="empty">S</span>
                     </label>
                   <?php
@@ -62,7 +62,7 @@
                 {
                   ?>
                     <label>
-                      <input class="sizes" type="radio" name="sizes">
+                      <input class="sizes" checked type="radio" value="S" name="size">
                       <span>S</span>
                     </label>
                   <?php
@@ -74,7 +74,7 @@
                 if ($size->item_numberofm < 1) {
                   ?>
                     <label>
-                      <input class="no-sizes" id="disabledTextInput" type="radio" name="sizes">
+                      <input class="no-sizes" id="disabledTextInput" type="radio"  name="sizes">
                       <span class="empty">M</span>
                     </label>
                   <?php
@@ -83,7 +83,7 @@
                 {
                   ?>
                     <label>
-                      <input class="sizes" type="radio" name="sizes">
+                      <input class="sizes" type="radio" value="M" name="size">
                       <span>M</span>
                     </label>
                   <?php
@@ -104,7 +104,7 @@
                 {
                   ?>
                     <label>
-                      <input class="sizes" type="radio" name="sizes">
+                      <input class="sizes" type="radio" value="L" name="size">
                       <span>L</span>
                     </label>
                   <?php
@@ -125,7 +125,7 @@
                 {
                   ?>
                     <label>
-                      <input class="sizes" type="radio" name="sizes">
+                      <input class="sizes" type="radio" value="XL" name="size">
                       <span>XL</span>
                     </label>
                   <?php
@@ -146,7 +146,7 @@
                 {
                   ?>
                     <label>
-                      <input class="sizes" type="radio" name="sizes">
+                      <input class="sizes" type="radio" value="XXL" name="size">
                       <span>XXL</span>
                     </label>
                   <?php

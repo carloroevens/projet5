@@ -90,6 +90,15 @@ try{
 	elseif ($p === 'modifyitem') {
 		$itemController->modifyItem();
 	}
+	elseif ($p === 'cartpage') {
+		$appController->getCartPage();
+	}
+	elseif ($p === 'addcart') {
+		$itemController->addCart();
+	}
+	elseif ($p === 'deletecart') {
+		$itemController->deleteCart();
+	}
 }
 
 catch(Exception $e)

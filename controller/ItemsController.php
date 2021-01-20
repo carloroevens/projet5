@@ -101,4 +101,33 @@ class ItemsController
 			throw new Exception("Vous n'êtes pas un administrateur");
 		}
 	}
+
+	public function addCart()
+	{
+		if (isset($_SESSION['loger']) && isset($_GET['id'])) {
+			$_SESSION['panier'] = $_SESSION['panier'] + 1;
+			$cartManager = new CartManager;
+			$item_number = 1;
+			$cartManager->additem($_SESSION['id'], $_GET['id'], $item_number, $_POST['size']);
+			header('location: index.php?p=single&idProduct=' . $_GET['id']);
+		}
+		else
+		{
+			throw new Exception("Vous nêtes pas connecter");
+		}
+	}
+
+	public function deleteCart()
+	{
+		if (isset($_SESSION['loger']) && isset($_GET['id'])) {
+			$_SESSION['panier'] = $_SESSION['panier'] - 1;
+			$cartManager = new CartManager;
+			$cartManager->deleteItem($_GET['id']);
+			header('location: index.php?p=cartpage');
+		}
+		else
+		{
+			throw new Exception("Vous n'êtes pas connecter");
+		}
+	}
 }
