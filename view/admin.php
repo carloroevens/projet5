@@ -10,8 +10,9 @@
     <link rel="stylesheet" type="text/css" href="public/css/hero.css">
     <link rel="stylesheet" type="text/css" href="public/css/profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="icon" type="image/png" sizes="16x16" href="public/img/favicon.png"/>
     
-    <title>Hello, world!</title>
+    <title>SQUARE | Boutique en ligne</title>
   </head>
   <body class="bg-white bg-gradient">
     
@@ -25,7 +26,7 @@
         <a class="btn btn-warning w-75 profile-btn fs-2 fw-bold" href="index.php?p=addproduct"><i class="fas fa-plus"></i><i class="fas fa-tshirt"></i><br>Ajout d'article</a>
       </div>
       <div class="col text-center">
-        <a class="btn btn-warning w-75 profile-btn fs-2 fw-bold" href="index.php?p=productmanagement"><i class="fas fa-box-open"></i></i><br>Gestion des stocks</a>
+        <a class="btn btn-warning w-75 profile-btn fs-2 fw-bold" href="index.php?p=productmanagement&amp;pagenumber=1"><i class="fas fa-box-open"></i></i><br>Gestion des stocks</a>
       </div>
     </div>
   </div>

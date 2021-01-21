@@ -9,8 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="public/css/hero.css">
     <link rel="stylesheet" type="text/css" href="public/css/shop.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/img/favicon.png"/>
 
-    <title>Hello, world!</title>
+    <title>SQUARE | Boutique en ligne</title>
   </head>
   <body class="bg-light bg-gradient">
     
@@ -23,12 +24,12 @@
       <div class="col text-center">
         <h1>VÊTEMENTS</h1>
         <ul class="list-inline category pt-4">
-          <li class="list-inline-item"><a id="lien" class="text-decoration-none text-secondary me-2 mx-md-3 mx-lg-4 mx-xl-5" href="index.php?p=shop">TOUT</a></li>
-          <li class="list-inline-item"><a id="lien" class="text-decoration-none text-secondary me-2 mx-md-3 mx-lg-4 mx-xl-5" href="index.php?p=shop&amp;category=T-SHIRT">T-SHIRTS</a></li>
-          <li class="list-inline-item"><a id="lien" class="text-decoration-none text-secondary me-2 mx-md-3 mx-lg-4 mx-xl-5" href="index.php?p=shop&amp;category=SWEAT">SWEATS</a></li>
-          <li class="list-inline-item"><a id="lien" class="text-decoration-none text-secondary me-2 mx-md-3 mx-lg-4 mx-xl-5" href="index.php?p=shop&amp;category=JEAN">JEANS</a></li>
-          <li class="list-inline-item"><a id="lien" class="text-decoration-none text-secondary me-2 mx-md-3 mx-lg-4 mx-xl-5" href="index.php?p=shop&amp;category=VESTE">VESTES</a></li>
-          <li class="list-inline-item"><a id="lien" class="text-decoration-none text-secondary me-2 mx-md-3 mx-lg-4 mx-xl-5" href="index.php?p=shop&amp;category=ACCESSOIRE">ACCESSOIRES</a></li>
+          <li class="list-inline-item"><a id="lien" class="text-decoration-none text-secondary me-2 mx-md-3 mx-lg-4 mx-xl-5" href="index.php?p=shop&amp;pagenumber=1">TOUT</a></li>
+          <li class="list-inline-item"><a id="lien" class="text-decoration-none text-secondary me-2 mx-md-3 mx-lg-4 mx-xl-5" href="index.php?p=shop&amp;category=T-SHIRT&amp;pagenumber=1">T-SHIRTS</a></li>
+          <li class="list-inline-item"><a id="lien" class="text-decoration-none text-secondary me-2 mx-md-3 mx-lg-4 mx-xl-5" href="index.php?p=shop&amp;category=SWEAT&amp;pagenumber=1">SWEATS</a></li>
+          <li class="list-inline-item"><a id="lien" class="text-decoration-none text-secondary me-2 mx-md-3 mx-lg-4 mx-xl-5" href="index.php?p=shop&amp;category=JEAN&amp;pagenumber=1">JEANS</a></li>
+          <li class="list-inline-item"><a id="lien" class="text-decoration-none text-secondary me-2 mx-md-3 mx-lg-4 mx-xl-5" href="index.php?p=shop&amp;category=VESTE&amp;pagenumber=1">VESTES</a></li>
+          <li class="list-inline-item"><a id="lien" class="text-decoration-none text-secondary me-2 mx-md-3 mx-lg-4 mx-xl-5" href="index.php?p=shop&amp;category=ACCESSOIRE&amp;pagenumber=1">ACCESSOIRES</a></li>
         </ul>
       </div>
     </div>
@@ -38,7 +39,7 @@
         <?php
         if (isset($_GET['category'])) {
 
-          foreach ($itemManager->getItemByCategory($_GET['category'], 'ItemsController') as $items): 
+          foreach ($itemManager->getItemByCategory($currentPage, $parPage, $_GET['category'], 'ItemsController') as $items): 
             ?>
 
       <div class="col-12 col-sm-6 col-lg-3 my-4 d-flex justify-content-center">
@@ -61,7 +62,7 @@
         }
         else if (!isset($_GET['category']))
         {
-          foreach ($itemManager->getItems('ItemsController') as $items): ?>
+          foreach ($itemManager->getItems($currentPage, $parPage, 'ItemsController') as $items): ?>
 
       <div class="col-12 col-sm-6 col-lg-3 my-4 d-flex justify-content-center">
         <div class="card bg-product" style="width: 18rem;">
@@ -92,6 +93,47 @@
                 <?php
               }*/
             ?>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <nav>
+          <?php 
+            if (isset($_GET['category'])) {
+              ?>
+                <ul class="pagination justify-content-center">
+              <?php for ($i=1; $i <= $numberPage; $i++) { 
+              if ($i == $page) {
+                ?>
+                 <li class="page-item"><a class="page-link" href="index.php?p=shop&amp;category=<?= $_GET['category']; ?>&amp;pagenumber=<?= $i ?>"><?= $i ?></a></li>
+                  <?php
+              } else {
+                ?>
+                <li class="page-item"><a class="page-link" href="index.php?p=shop&amp;category=<?= $_GET['category']; ?>&amp;pagenumber=<?= $i ?>"><?= $i ?></a></li>
+                <?php
+              }
+              }
+            }
+            else
+            {
+          ?>
+            <ul class="pagination justify-content-center">
+              <?php for ($i=1; $i <= $numberPage; $i++) { 
+              if ($i == $page) {
+                ?>
+                 <li class="page-item"><a class="page-link" href="index.php?p=shop&amp;pagenumber=<?= $i ?>"><?= $i ?></a></li>
+                  <?php
+              } else {
+                ?>
+                <li class="page-item"><a class="page-link" href="index.php?p=shop&amp;pagenumber=<?= $i ?>"><?= $i ?></a></li>
+                <?php
+              }
+            }
+            }
+            ?>
+            </ul>
+        </nav>
+      </div>
     </div>
   </div>
 

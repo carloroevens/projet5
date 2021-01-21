@@ -9,8 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="public/css/hero.css">
     <link rel="stylesheet" type="text/css" href="public/css/form.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/img/favicon.png"/>
 
-    <title>Hello, world!</title>
+    <title>SQUARE | Boutique en ligne</title>
   </head>
   <body class="bg-white bg-gradient">
     

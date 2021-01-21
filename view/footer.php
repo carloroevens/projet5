@@ -5,10 +5,10 @@
             <p class="text-dark text-uppercase">Plan du site</p>
             <ul class="list-unstyled">
               <li class="mb-3">
-                <a class="text-decoration-none link" href="index.php?p=shop">Vêtements</a>
+                <a class="text-decoration-none link" href="index.php?p=shop&amp;pagenumber=1">Vêtements</a>
               </li>
-              <li>
-                <a class="text-decoration-none link" href="">Collections</a>
+              <li class="mb-3">
+                <a class="text-decoration-none link" href="#">Contact</a>
               </li>
             </ul>
           </div>

@@ -9,8 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="public/css/hero.css">
     <link rel="stylesheet" type="text/css" href="public/css/shop.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/img/favicon.png"/>
     
-    <title>Hello, world!</title>
+    <title>SQUARE | Boutique en ligne</title>
   </head>
   <body class="bg-white bg-gradient">
     
@@ -21,7 +22,7 @@
   <div class="container">
     <div class="row">
       <?php
-                foreach ($itemManager->getItems('ItemsController') as $items): ?>
+                foreach ($itemManager->getItems($currentPage, $parPage, 'ItemsController') as $items): ?>
 
       <div class="col-12 col-sm-6 col-lg-3 my-4 d-flex justify-content-center">
         <div class="card bg-product" style="width: 18rem;">
@@ -62,6 +63,19 @@
         </div>
       </div>
         <?php endforeach; ?>
+        <ul class="pagination justify-content-center">
+              <?php for ($i=1; $i <= $numberPage; $i++) { 
+              if ($i == $page) {
+                ?>
+                 <li class="page-item"><a class="page-link" href="index.php?p=productmanagement&amp;pagenumber=<?= $i ?>"><?= $i ?></a></li>
+                  <?php
+              } else {
+                ?>
+                <li class="page-item"><a class="page-link" href="index.php?p=productmanagement&amp;pagenumber=<?= $i ?>"><?= $i ?></a></li>
+                <?php
+              }
+            }
+            ?>
     </div>
   </div>
 

@@ -8,8 +8,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="public/css/hero.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/img/favicon.png"/>
 
-    <title>Hello, world!</title>
+    <title>SQUARE | Boutique en ligne</title>
   </head>
   <body class="bg-light bg-gradient">
     
@@ -36,19 +37,19 @@
   <div class="container">
     <div class="row my-5">
       <div class="col-12 col-xl-4 my-3 text-center">
-        <a class="position-relative" href="">
+        <a class="position-relative" href="index.php?p=shop&amp;pagenumber=1">
           <img class="banner img-fluid" src="public/img/square1.jpg">
           <span class="position-absolute word">Vêtements</span>
         </a>
       </div>
       <div class="col-12 col-xl-4 my-3 text-center">
-        <a class="position-relative" href="">
+        <a class="position-relative" href="index.php?p=shop&amp;category=ACCESSOIRE&amp;pagenumber=1">
           <img class="banner img-fluid" src="public/img/square2.jpg">
           <span class="position-absolute word">Accessoires</span>
         </a>
       </div>
       <div class="col-12 col-xl-4 my-3 text-center">
-        <a class="position-relative" href="">
+        <a class="position-relative" href="index.php?p=shop&amp;pagenumber=1">
           <img class="banner img-fluid" src="public/img/square3.jpg">
           <span class="position-absolute word word2">NOUVELLE COLLECTION</span>
         </a>
@@ -61,12 +62,12 @@
           <div class="hr-style my-4"></div>
           <div class="h5 mt-4">
             <ul class="list-unstyled">
-              <li class="mb-4"><a class="lien" href="">Collection Hiver</a></li>
-              <li><a class="lien" href="">Collection Printemps</a></li>
+              <li class="mb-4"><a class="lien" href="index.php?p=shop&amp;pagenumber=1">Collection Hiver</a></li>
+              <li><a class="lien" href="index.php?p=shop&amp;pagenumber=1">Collection Printemps</a></li>
             </ul>
             <ul class="list-unstyled">
-              <li class="mb-4"><a class="lien" href="">Collection Été</a></li>
-              <li><a class="lien" href="">Collection Automne</a></li>
+              <li class="mb-4"><a class="lien" href="index.php?p=shop&amp;pagenumber=1">Collection Été</a></li>
+              <li><a class="lien" href="index.php?p=shop&amp;pagenumber=1">Collection Automne</a></li>
             </ul>
           </div>
         </div>

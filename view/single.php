@@ -10,8 +10,9 @@
     <link rel="stylesheet" type="text/css" href="public/css/hero.css">
     <link rel="stylesheet" type="text/css" href="public/css/single.css">
     <link rel="stylesheet" type="text/css" href="public/css/shop.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/img/favicon.png"/>
 
-    <title>Hello, world!</title>
+    <title>SQUARE | Boutique en ligne</title>
   </head>
   <body class="bg-white bg-gradient">
     

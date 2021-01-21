@@ -10,10 +10,48 @@ class AppController
 	}
 
 	public function getShopPage()
-	{
-		$itemManager = new ItemManager;
-		
-		require 'view/shop.php';
+	{	
+		if (isset($_GET['pagenumber'])) {
+			$itemManager = new ItemManager;
+			if (isset($_GET['category'])) {
+				$numberItem = $itemManager->getNumberItemByCategory($_GET['category']);
+				$parPage = 12;
+				$numberPage = ceil($numberItem / $parPage);
+
+				if ($_GET['pagenumber'] > 0 && $_GET['pagenumber'] <= $numberPage) 
+				{
+					$page = $_GET['pagenumber'];
+				}
+				else
+				{
+					$page = 1;
+				}
+
+				$currentPage = (($page-1)*$parPage);
+			}
+			else
+			{
+				$numberItem = $itemManager->getNumberItem();
+				$parPage = 12;
+				$numberPage = ceil($numberItem / $parPage);
+
+				if ($_GET['pagenumber'] > 0 && $_GET['pagenumber'] <= $numberPage) 
+				{
+					$page = $_GET['pagenumber'];
+				}
+				else
+				{
+					$page = 1;
+				}
+
+				$currentPage = (($page-1)*$parPage);
+			}
+			require 'view/shop.php';
+		}
+		else
+		{
+			throw new Exception("Cette page n'existe pas");
+		}
 	}
 
 	public function getSinglePage($idProduct)
@@ -93,6 +131,21 @@ class AppController
 		if (isset($_SESSION['loger']) && $_SESSION['acces'] == 1) {
 
 			$itemManager = new ItemManager;
+			$numberItem = $itemManager->getNumberItem();
+				$parPage = 12;
+				$numberPage = ceil($numberItem / $parPage);
+
+				if ($_GET['pagenumber'] > 0 && $_GET['pagenumber'] <= $numberPage) 
+				{
+					$page = $_GET['pagenumber'];
+				}
+				else
+				{
+					$page = 1;
+				}
+
+				$currentPage = (($page-1)*$parPage);
+
 			require 'view/productmanagement.php';
 		}
 		else

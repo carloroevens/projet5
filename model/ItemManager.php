@@ -36,11 +36,11 @@ class ItemManager extends Manager
 		$req->execute(array($item_id));
 	}
 
-	public function getItems($class)
+	public function getItems($page, $nbparpage, $class)
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->query('SELECT * FROM items_description');
+		$req = $db->query('SELECT * FROM items_description LIMIT '. $page . "," . $nbparpage);
 		
 		$datas = $req->fetchAll(PDO::FETCH_CLASS, $class);
 
@@ -94,16 +94,39 @@ class ItemManager extends Manager
 		return $data;
 	}
 
-	public function getItemByCategory($item_category, $class)
+	public function getItemByCategory($page, $nbparpage, $item_category, $class)
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('SELECT id, item_name, item_price, item_img FROM items_description WHERE item_category = ? ');
+		$req = $db->prepare('SELECT id, item_name, item_price, item_img FROM items_description WHERE item_category = ?  LIMIT '. $page . "," . $nbparpage);
 		$req->execute(array($item_category));
 		$req->setFetchMode(PDO::FETCH_CLASS, $class);
 		$datas = $req->fetchAll();
 
 		return $datas;
+	}
+
+	public function getNumberItemByCategory($category)
+	{
+		$db = $this->dbConnect();
+
+		$req = $db->prepare('SELECT COUNT(id) FROM items_description WHERE item_category = ?');
+		$req->execute([$category]);
+		$datas = $req->fetch();
+		$data = intval($datas['COUNT(id)']);
+
+		return $data;
+	}
+
+	public function getNumberItem()
+	{
+		$db = $this->dbConnect();
+
+		$req = $db->query('SELECT COUNT(id) FROM items_description');
+		$datas = $req->fetch();
+		$data = intval($datas['COUNT(id)']);
+
+		return $data;
 	}
 
 	//On passe a la table items_size

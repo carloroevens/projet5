@@ -8,7 +8,7 @@ class UsersController
 {
 	public function addUser()
 	{
-		if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['Comf-password'])) {
+		if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['Comf-password']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['Comf-password'])) {
 
 			if ($_POST['password'] === $_POST['Comf-password']) {
 				$userManager = new UserManager;
@@ -17,7 +17,7 @@ class UsersController
 				
 				if (in_array(1, $getmail)) {
 
-					throw new Exception("Il existe déja un compte avec cette adresse mail");
+					echo "Il existe déja un compte avec cette adresse mail";
 				}
 				else
 				{
@@ -29,12 +29,12 @@ class UsersController
 			}
 			else
 			{
-				throw new Exception("Mot de passe différent");
+				echo "Mot de passe différent";
 			}
 		}
 		else
 		{
-			throw new Exception("Vous n'avez pas remplie les champs attendus");
+			echo "Vous n'avez pas remplie les champs attendus";
 		}
 	}
 
